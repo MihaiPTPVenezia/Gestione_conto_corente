@@ -4,6 +4,11 @@
 
 using namespace std;
 
+void menu() {
+	cout << "1) Vizualizza saldo\t\t2) Transazione\n";
+	cout << "0) EXIT\n";
+	return;
+}
 
 //Input  data
 void ins_date(date& d) {
@@ -99,8 +104,10 @@ void ins_transazione(transazioni& t) {
 
 //output del saldo
 void out_saldo(double s) {
+	system("cls");
 	cout << "################################################################\n\n";
 	cout << "\t\t\tSALTO ATUALE: " << s << "\n\n";
 	cout << "################################################################\n\n";
+	system("pause");
 	return;
 }

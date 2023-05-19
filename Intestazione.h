@@ -20,6 +20,8 @@ struct transazioni {
 	char tipo = 'A';
 };
 
+void menu();
+
 void ins_date(date& d);					//input data
 void ins_descrizione(string& desc);		//input descrizione della transazione
 void ins_importo(double& imp);			//input dell'importo
