@@ -18,5 +18,13 @@
     <ClCompile Include="Gestione_conto_corente.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="Intestazione.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Intestazione.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
