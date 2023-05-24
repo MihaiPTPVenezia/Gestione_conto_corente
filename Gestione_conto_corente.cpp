@@ -12,9 +12,10 @@ int main()
 	bool chiudi = false;
 	double saldo = 0;
 	int opt;
+
+	int conta = 0;
    
-	transazioni entrate[100];
-	transazioni uscite[100];
+	transazioni muovimenti[100];
 	
 	transazioni trans;
 
@@ -34,8 +35,10 @@ int main()
 			break;
 		case 2:
 			ins_transazione(trans, saldo);
+			ins_movimento(trans, muovimenti, conta);
 			break;
 		case 3:
+			print_trans(muovimenti, conta);
 
 			break;
 		}

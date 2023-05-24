@@ -5,7 +5,7 @@
 using namespace std;
 
 void menu() {
-	cout << "1) Vizualizza saldo\t\t2) Transazione\n";
+	cout << "1) Vizualizza saldo\n2) Transazione\n";
 	cout << "3) Storico transazioni\n";
 	cout << "0) EXIT\n";
 	return;
@@ -113,14 +113,42 @@ void ins_transazione(transazioni& t, double& saldo) {
 			cout << "SALDO INSUFICENTE!!!\n";
 			cout << "RIPRTERE OPERAZIONE\n";
 			system("pause");
+			t.tipo = 'N';
 		}
-		else
+		else {
 			saldo = saldo - t.importo;
+		}
 		break;
 	}
 
 	return; 
 }
+
+//funzione che inserisce la transazione nell array
+void ins_movimento(transazioni& t, transazioni muovimenti[], int& i) {
+	if (t.tipo == 'N')
+		return;
+	else {
+		muovimenti[i] = t;
+		i++;
+	}
+	return;
+}
+
+void print_trans(transazioni mov[], int c) {
+	system("cls");
+	cout << "Data\t\tImporto\tTipo\tDescrizione" << endl;
+	for (int i = 0; i < c; i++) {
+		cout << mov[i].data.giorno << "/" << mov[i].data.mese << "/" << mov[i].data.anno << "\t";
+		cout << mov[i].importo << "\t";
+		cout << mov[i].tipo << "\t";
+		cout << mov[i].descrizione << endl;
+	}
+	system("pause");
+
+	return;
+}
+
 
 //output del saldo
 void out_saldo(double s) {

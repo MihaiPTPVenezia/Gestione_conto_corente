@@ -20,6 +20,7 @@ struct transazioni {
 	char tipo = 'A';
 };
 
+
 void menu();
 
 void ins_date(date& d);					//input data
@@ -30,3 +31,7 @@ void ins_transazione(transazioni& t, double& saldo);	//implemetazione di tute le
 
 void out_saldo(double s);		//output del saldo 
 
+//inserisce transazione nell array 
+void ins_movimento(transazioni& t, transazioni muovimenti[], int& i);
+
+void print_trans(transazioni mov[], int c);		//da in output il array dei muovimenti
