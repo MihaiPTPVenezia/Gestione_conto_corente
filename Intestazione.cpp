@@ -5,7 +5,8 @@
 using namespace std;
 
 void menu() {
-	cout << "1) Vizualizza saldo\n2) Transazione\n";
+	cout << "1) Vizualizza saldo\n";
+	cout << "2) Transazione\n";
 	cout << "3) Storico transazioni\n";
 	cout << "0) EXIT\n";
 	return;
