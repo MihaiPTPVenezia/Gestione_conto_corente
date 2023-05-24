@@ -33,7 +33,10 @@ int main()
 			out_saldo(saldo);
 			break;
 		case 2:
-			ins_transazione(trans);
+			ins_transazione(trans, saldo);
+			break;
+		case 3:
+
 			break;
 		}
 		system("cls");

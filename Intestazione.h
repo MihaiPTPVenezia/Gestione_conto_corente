@@ -26,7 +26,7 @@ void ins_date(date& d);					//input data
 void ins_descrizione(string& desc);		//input descrizione della transazione
 void ins_importo(double& imp);			//input dell'importo
 void ins_tipo_mov(char& tipo);			//Input tipo transazione
-void ins_transazione(transazioni& t);	//implemetazione di tute le funzioni di input
+void ins_transazione(transazioni& t, double& saldo);	//implemetazione di tute le funzioni di input
 
 void out_saldo(double s);		//output del saldo 
 

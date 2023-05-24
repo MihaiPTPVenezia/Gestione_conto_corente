@@ -6,6 +6,7 @@ using namespace std;
 
 void menu() {
 	cout << "1) Vizualizza saldo\t\t2) Transazione\n";
+	cout << "3) Storico transazioni\n";
 	cout << "0) EXIT\n";
 	return;
 }
@@ -50,8 +51,9 @@ void ins_date(date& d) {
 
 // Input descrizione
 void ins_descrizione(string& desc) {
-	cout << "Descrizione del programma:\n";
-	getline(cin, desc);
+	cout << "Descrizione della transazione:\n";
+	//getline(cin, desc);
+	cin >> desc;
 	return;
 }
 
@@ -93,12 +95,30 @@ void ins_tipo_mov(char& tipo) {
 
 
 //funzione che prende in input un tansazione
-void ins_transazione(transazioni& t) {
+void ins_transazione(transazioni& t, double& saldo) {
 	cout << "Inserisci la data:\n";
 	ins_date(t.data);
 	ins_descrizione(t.descrizione);
 	ins_importo(t.importo);
 	ins_tipo_mov(t.tipo);
+
+	switch (t.tipo)
+	{
+	case 'A':
+		saldo = saldo + t.importo;
+		break;
+	case 'D':
+		if (t.importo > saldo) {
+			system("cls");
+			cout << "SALDO INSUFICENTE!!!\n";
+			cout << "RIPRTERE OPERAZIONE\n";
+			system("pause");
+		}
+		else
+			saldo = saldo - t.importo;
+		break;
+	}
+
 	return; 
 }
 
